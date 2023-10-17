@@ -1,53 +1,36 @@
 import { useEffect, useState } from 'react';
 
 import Modal from "./Modal";
+import Input from '../inputs/Input';
 import Select from '../select/Select';
 
-import Input from '../inputs/Input';
-import { toast } from 'react-hot-toast'
-import { User } from '../../interfaces/User';
-import { useDeleteUser } from '../../hooks/useDeleteUser';
+import { Vehicle } from '../../interfaces/Vehicle';
 
 interface DeleteModalProps{
-    user?: User
+    vehicle?: Vehicle
     isOpen: boolean
     closeModal: () => void
     onConfimation: () => void
 }
 
-const DeleteModal:React.FC<DeleteModalProps> = ({user, isOpen, closeModal, onConfimation}) =>{
+const DeleteModal:React.FC<DeleteModalProps> = ({vehicle, isOpen, closeModal, onConfimation}) =>{
 
-    const { mutate, isSuccess, isError } = useDeleteUser(user?.id)
-
-    const deleteUser = (id?:number) =>{
-        mutate()
-    }
-
-    useEffect(() => {
-        if(isSuccess){ 
-            toast.success("User deleted" , {duration: 4000, style:{background:"rgb(220 252 231)"}})
-            onConfimation()
-        }      
-        isError && toast.error(`Error occured !`, {duration: 4000, style:{background:"rgb(254 205 211)"}})        
-    }, [isSuccess, isError])
-    
 
     const handleConfirmation = () => {
-        deleteUser(user?.id)
         closeModal()
     }
     
     const bodyContent = (
         <div className="flex flex-col gap-4">
-             <Input id="name" label="Name" type="text" value={user?.name} disabled required/>
-             <Input id="email" label="Email" type="email" value={user?.email} disabled required/>
-             {/* <Select list={["Active","Invited"]} disabled text="Status" value={user?.status}/> */}
-             <Select id="role" list={["Admin","Sales Leader", "Sales Rep"]} disabled text="Role" value={user?.role}/>
+             <Input id="make" label="Make" type="text" value={vehicle?.make} disabled required/>
+             <Input id="model" label="Model" type="text" value={vehicle?.model} disabled required/>
+             {/* <Select list={["Active","Invited"]} disabled text="Status" value={vehicle?.status}/> */}
+            {/*  <Select id="role" list={["Admin","Sales Leader", "Sales Rep"]} disabled text="Role" value={vehicle?.role}/> */}
         </div>
     )
 
     return (
-        <Modal disabled={false} isOpen={isOpen} title="Delete User" label="Confirm" 
+        <Modal disabled={false} isOpen={isOpen} title="Delete Vehicle" label="Confirm" 
         onClose={closeModal} 
         onSubmit={handleConfirmation} 
         body={bodyContent}/>

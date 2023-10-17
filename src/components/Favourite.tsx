@@ -114,55 +114,7 @@ export function StatusPill({ value }) {
   );
 }
 
-export function ActionButton({ value }) {
 
-  const isFavourite = value;
-
-  const [vehicle, setVehicle] = useState<Vehicle | undefined>(undefined)
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
-  // const refetch = useGetVehicles()
-  // const [value, setValue] = React.useState()
-
-
-  useEffect(() => {
-    setTimeout(() => {
-        // console.log("latestquery "+ query);
-        // console.log('refetch', refetch);
-        // setValue(refetch)
-      }, 500);
-    }, [editModalOpen,deleteModalOpen])
-
-
-  return (
-    <>
-    <DeleteModal vehicle={vehicle} isOpen={deleteModalOpen} 
-                  onConfimation={null} 
-                  closeModal={() => setDeleteModalOpen(false)} />
-            
-            <EditVehicleModal vehicle={vehicle} title={vehicle?"Edit vehicle": "Add vehicle"} isOpen={editModalOpen} 
-            // onConfimation={refetch} 
-            closeModal={() => setEditModalOpen(false)} />
-
-      <td className="p-1 bg-transparent text-sm justify-items-center" >
-          {/* button component */}
-          <div className="flex space-x-4 justify-between justify-items-center">
-              <Button icon={RiDeleteBin6Line} classes="bg-slate-100 hover:bg-slate-200 transition rounded-full p-3" color="rgb(107 114 128)" onClick={()=> {setVehicle(undefined); setDeleteModalOpen(true)}} />
-              <Button icon={FiEdit2} color="rgb(107 114 128)" classes="bg-slate-100 hover:bg-slate-200 transition rounded-full p-3" onClick={()=> {setVehicle(undefined); setEditModalOpen(true)}} />
-              <Button icon={BsFillBookmarkStarFill} color="rgb(107 114 128)" classes="bg-slate-100 hover:bg-slate-200 transition rounded-full p-3" onClick={()=> onEdit()} />
-              {/* <span
-                className={classNames(
-                  "px-5 py-3 py-1 justify-items-center border-gray-200 text-left text-sm font-semibold text-gray-500 tracking-wider uppercase leading-wide font-bold text-xs rounded-full shadow-sm",
-                  isFavourite === "true" ? "bg-green-100 text-green-700" : null,
-                  isFavourite === "false" ? "bg-yellow-100 text-yellow-700" : null,
-                )}
-              >
-              </span> */}
-          </div>
-      </td>
-    </>
-  );
-}
 
 export function AvatarCell({ value, column, row }) {
   return (
@@ -226,35 +178,17 @@ function Table({ columns, data }) {
     setTimeout(() => {
         // console.log("latestquery "+ query);
         // console.log('refetch', refetch);
-        // setValue(refetch)
+        setValue(refetch)
       }, 500);
     }, [editModalOpen])
 
   // Render the UI for your table
   return (
     <>            
-            <EditVehicleModal vehicle={vehicle} title={vehicle?"Edit vehicle": "Add vehicle"} isOpen={editModalOpen} 
-            onConfimation={refetch} 
-            closeModal={() => setEditModalOpen(false)} />
 
     <div class="flow-root ">
-    <div className="float-left flex gap-x-2">
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
-        {headerGroups.map((headerGroup) =>
-          headerGroup.headers.map((column) =>
-            column.Filter ? (
-              <div key={column.id}>{column.render("Filter")}</div>
-            ) : null
-          )
-        )}
-      </div>
-      <div className="float-right gap-4 flex flex-row h-fit">
-          <Button text="Add Vehicle" icon={MdOutlineAdd} classes="gap-2 items-center px-4 justify-center flex flex-row  text-white bg-blue-600 rounded-lg font-semibold hover:bg-blue-400 p-2 " 
-          onClick={()=> {setVehicle(undefined); setEditModalOpen(true)}}><span className="sr-only">Next</span></Button>
+    <div className="flex gap-x-2 items-baseline">
+      <span className="text-gray-700">Favourites</span>
       </div>
     </div>  
       

@@ -1,0 +1,182 @@
+{
+  "boards": [
+    {
+      "name": "Vehicle",
+      "isActive" : false,
+      "columns": [
+        {
+          "name": "Available",
+          "tasks": [
+            {
+              "title": "Toyota Corolla",
+              "description": "Corolla",
+              "status": "Available",
+              "subtasks": [
+                {
+                  "title": "$18000",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "title": "Ford Fiesta",
+              "description": "Fiesta",
+              "status": "Available",
+              "subtasks": [
+                {
+                  "title": "Search page",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Honda Civic",
+              "description": "Civic",
+              "status": "Available",
+              "subtasks": [
+                {
+                  "title": "$20000",
+                  "isCompleted": false
+                },
+                {
+                  "title": "15000 miles",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Kia Carens",
+              "description": "Once we feel version one is ready, we need to rigorously",
+              "status": "Available",
+              "subtasks": [
+                {
+                  "title": "Internal testing",
+                  "isCompleted": false
+                },
+                {
+                  "title": "External testing",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "InProgress",
+          "tasks": [
+            {
+              "title": "Lamborghini Aventador",
+              "description": "Aventador",
+              "status": "InProgress",
+              "subtasks": [
+                {
+                  "title": "2000 miles",
+                  "isCompleted": true
+                },
+                {
+                  "title": "$500000",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Tata Punch",
+              "description": "Punch",
+              "status": "InProgress",
+              "subtasks": [
+                {
+                  "title": "Define user model",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Add auth endpoints",
+                  "isCompleted": false
+                }
+              ]
+            },
+            {
+              "title": "Tata Seirra",
+              "description": "We know what we're planning to build for version one. Now we need to finalise the first pricing model.",
+              "status": "InProgress",
+              "subtasks": [
+                {
+                  "title": "Research competitor pricing and business models",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Outline a business model that works for our solution",
+                  "isCompleted": false
+                },
+                {
+                  "title": "Talk to potential customers about our proposed solution and ask for fair price expectancy",
+                  "isCompleted": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sold",
+          "tasks": [
+            {
+              "title": "Mahindra Scorpio",
+              "description": "Ensure the layout continues to make sense and we have strong buy-in from potential users.",
+              "status": "Sold",
+              "subtasks": [
+                {
+                  "title": "Complete 5 wireframe prototype tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "title": "BYD Electric",
+              "description": "Create a greyscale clickable wireframe prototype to test our asssumptions so far.",
+              "status": "Sold",
+              "subtasks": [
+                {
+                  "title": "Create clickable wireframe prototype in Balsamiq",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "title": "Jeep Compass",
+              "description": "Keep iterating through the subtasks until we're clear on the core concepts for the app.",
+              "status": "Sold",
+              "subtasks": [
+                {
+                  "title": "Meet to review notes from previous tests and plan changes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Make changes to paper prototypes",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Conduct 5 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            },
+            {
+              "title": "Premier Padmini",
+              "description": "",
+              "status": "Sold",
+              "subtasks": [
+                {
+                  "title": "Create paper prototypes for version one",
+                  "isCompleted": true
+                },
+                {
+                  "title": "Complete 10 usability tests",
+                  "isCompleted": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
